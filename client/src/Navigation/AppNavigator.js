@@ -10,6 +10,7 @@ import { authApi } from "../api/api/authApi";
 import Login from '../components/auth/LoginForm';
 import Register from '../components/auth/RegisterForm';
 import { loginUser } from "../components/auth/userSlice";
+import { CreateProduct } from "../components/createProduct/createProduct";
 import Layout from "../components/layout/Layout";
 import { MainNavigator } from "./MainNavigator";
 
@@ -36,6 +37,7 @@ useEffect(() => {
             <Route path="/" exact component={Login} />
             <Route path="/register" exact component={Register} />
             <Route path="/layout" exact component={Layout} />
+            <Route path="/create-product" exact component={CreateProduct} />
             <MainNavigator />
           </Switch>
         </Router>
