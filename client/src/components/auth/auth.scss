@@ -1,0 +1,33 @@
+.total{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-image: url('../../assets/image/background.png');
+    background-size: cover;
+    background-position: center;
+    }
+    .form-login{
+        background-color: rgb(186, 236, 236);
+        border-radius: 5px;
+        box-shadow: 0px 0px 15px rgba(95, 73, 118, 0.15);
+        width: 400px;
+        padding: 20px !important;
+        .input-login{
+            margin: 7px 0;
+        }
+        h2{
+            text-align: center;
+        }
+        .not_acount{
+            margin-top: 15px;
+            a{
+                color: black;
+                font-weight: 500;
+            }
+        }
+    }
+    .register{
+
+    }

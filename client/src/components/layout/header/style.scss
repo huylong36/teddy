@@ -1,0 +1,14 @@
+.menu{
+    .menu__item{
+        display: flex;
+        align-items: center;
+        .item{
+            width: 25%;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+    .logo{
+        width: 120px;
+    }
+}

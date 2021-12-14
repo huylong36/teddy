@@ -1,0 +1,22 @@
+POST http://localhost:5000/api/auth/register
+
+Content-Type: application/json
+
+{
+    "username" : "long",
+    "password" : "1234"
+}
+
+
+###
+
+
+GET http://localhost:5000/api/post
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlmMGQ2ZjYzYTA1ZWY1MjM5MDQ5N2YiLCJpYXQiOjE2MzgyNjE5NTN9.gyQBsn7rxnk1dsentOWTYtf0rBkFdutwP7qLEWXuL6A
+
+
+###
+
+
+DELETE  http://localhost:5000/api/post/61a48d7a6585a36ebfb0c950
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWE2ZGY3YjI0ZjkyYzQ1ZGI2NDczNTciLCJpYXQiOjE2MzgzMjgxMTF9.a_8wZLgo78TW0XqO2oANki8fUiKPxUSPch6g1-Nfc-o
