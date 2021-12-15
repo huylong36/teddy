@@ -41,7 +41,7 @@ const handleUrl = (url, query) => {
 };
 
 export const ApiClient = {
-  get: (url, payload) => handleResult(getAxios.get(handleUrl(url, payload))),
+  get: (url, payload) => handleResult(getAxios.get(url, payload)),
   post: (url, payload) => handleResult(getAxios.post(url, payload)),
   put: (url, payload) => handleResult(getAxios.put(url, payload)),
   patch: (url, payload) => handleResult(getAxios.patch(url, payload)),

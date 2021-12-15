@@ -7,4 +7,7 @@ export const productApi = {
   getAllProduct: () => {
     return ApiClient.get("api/product");
   },
+  detailProduct : (payload) =>{
+    return ApiClient.post(`api/product/product-detail`, payload)
+  }
 };

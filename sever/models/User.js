@@ -10,6 +10,10 @@ const UserSchema = new Schema({
         type:String,
         required:true,
     },
+    passwordHint:{
+        type:String,
+        required:true,
+    },
     createAt:{
         type:Date,
         default:Date.now,

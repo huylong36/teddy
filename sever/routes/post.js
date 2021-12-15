@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router(); 
 const verifyToken = require('../middleware/auth')
-const Post = require('../models/Post');
+const Product = require('../models/Product');
 const { post } = require('./auth');
 
 
@@ -19,21 +19,13 @@ router.get('/' , verifyToken,async (req,res) =>{
 
 
 router.post('/' , verifyToken, async (req,res)=>{
-    const {title,description,url,status ,user} = req.body
-
-    if(!title){
-        return res.status(400).json({success:false ,message : "Tilte is require..."})
-    }
-    if(!user){
-        return res.status(400).json({success:false , message:"user ? "})
-    }
+    const {nameProduct,imageProduct} = req.body
     try {
-        const newPost = new Post({
-            title,
-            description,
-            url:(url.startsWith('https://')) ? url : `https://${url}`,
-            status:status || 'TO LEARN',
-            user: req.userId,
+        const newPost = new Product({
+            nameProduct,
+            imageProduct,
+            status,
+            priceProduct,
         })
         await newPost.save();
         res.json({success:true,message:'Successs....',newPost})
@@ -59,7 +51,6 @@ router.put('/:id' , verifyToken,async (req,res)=>{
             user: userId,
         })
         const postUpdateCondition = {_id:req.params.id , user:userId}
-        console.log('postUpdateCondition' , postUpdateCondition);
 
         res.json({success:true,message:"Good" , post:updatePost})
         // user not authorize to update post 

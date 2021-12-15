@@ -17,15 +17,16 @@ const RegisterForm = () => {
              username :username.current.value,
              password :password.current.value,
              passwordHint : passwordHint.current.value, 
-             age : passwordHint.current.value, 
-             phone : passwordHint.current.value, 
-             email : passwordHint.current.value, 
+             age : age.current.value, 
+             phone : phone.current.value, 
+             email : email.current.value, 
             }
-            if(username||password||passwordHint||age||phone||email){
-                enqueueSnackbar('sai',{variant:"error"})
-            }
+            // if(username||password||passwordHint||age||phone||email){
+            //     enqueueSnackbar('sai',{variant:"error"})
+            // }
         try {
             const registerData = await authApi.register(registerForm);
+            console.log('registerData' , registerData);
         } catch (error) {
             console.log(error)
         }
@@ -36,7 +37,7 @@ const RegisterForm = () => {
             <h2>Register</h2>
             <TextField className="input-login" required id="standard-basic" label="Username" variant="outlined" inputRef={username} />
             <TextField className="input-login" required id="standard-basic" type="password" label="Password" variant="outlined" inputRef={password} />
-            <TextField className="input-login" required id="standard-basic" type="password" label="ConfirmPassword" variant="outlined" inputRef={passwordHint}/>
+            <TextField className="input-login" id="standard-basic" type="password" label="ConfirmPassword" variant="outlined" inputRef={passwordHint}/>
             <TextField className="input-login" required id="standard-basic" label="Age" variant="outlined" inputRef={age}/>
             <TextField className="input-login" required id="standard-basic" label="Phone" variant="outlined" inputRef={phone}/>
             <TextField className="input-login" required id="standard-basic" label="Email" variant="outlined" inputRef={email}/>

@@ -1,9 +1,20 @@
 .item-product{
+    a{
+        text-decoration: none
+    };
     .total__item__product{
-
+        text-align: center;
+        &:hover{
+            transform: translateY(-5px);
+            transition: all .5s;
+        }
     }
     .name__product{
-
+        overflow:hidden!important;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:1
     }
     .img__product{
         img{
@@ -20,5 +31,5 @@
     .price__product{
 
     }
-
+   
 }

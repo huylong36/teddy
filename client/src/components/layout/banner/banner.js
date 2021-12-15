@@ -21,7 +21,7 @@ const Banner = () => {
         loop={true}
         
     >
-        <SwiperSlide><img src="https://i.pinimg.com/originals/2f/88/0e/2f880ef2e1761ec234bf68cba9e7f3bb.jpg"></img></SwiperSlide>
+        <SwiperSlide><img src="https://imgt.taimienphi.vn/cf/Images/np/2020/2/17/gau-bong-dep-va-dang-yeu-nhat-41.jpg"></img></SwiperSlide>
         <SwiperSlide><img src="https://taoanhonline.com/wp-content/uploads/2019/08/hinh-nen-1920x1080-165-1.jpg"></img></SwiperSlide>
         <SwiperSlide><img src="https://i.pinimg.com/originals/2d/5a/b1/2d5ab14f89532f6529fb2cf0f0cf4f3c.jpg"></img></SwiperSlide>
         <SwiperSlide><img src="https://taoanhonline.com/wp-content/uploads/2019/08/hinh-nen-1920x1080-10-1.jpg"></img></SwiperSlide>

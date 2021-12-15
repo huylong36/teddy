@@ -18,7 +18,7 @@ const LoginForm = (props) => {
     const token = Cookies.get("token")
     useEffect(() => {
         if (token && stateUser.user) {
-          history.push('/layout');
+          history.push('/home');
         }
       }, [stateUser]);
 
@@ -31,7 +31,7 @@ const LoginForm = (props) => {
             const loginData = await  authApi.login(loginForm)
             Cookies.set('token' , loginData.data.accessToken)
             dispatch(loginUser(loginData.data.user))
-            history.push('/layout')
+            history.push('/home')
         } catch (error) {
             console.log(error);
         }

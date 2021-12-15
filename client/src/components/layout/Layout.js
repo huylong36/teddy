@@ -3,7 +3,7 @@ import Banner from './banner/banner'
 import Header from './header/header'
 import Product from './product/product'
 import './style.scss'
-const Layout = () => {
+const Home = () => {
     return (
          <div className="layout">
             <Header/>
@@ -13,4 +13,4 @@ const Layout = () => {
     )
 }
 
-export default Layout
+export default Home

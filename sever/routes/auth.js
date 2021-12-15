@@ -5,7 +5,7 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 
 router.post('/register', async (req, res) => {
-    const { username, password,age,phone,email } = req.body
+    const { username, password,passwordHint,age,phone,email } = req.body
     console.log(req.body);
     if (!username || !password) {
         return res.status(400)
@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ success: false, message: 'Tài khoản đã tồn tại' });
         }
         const hashPassword = await argon2.hash(password)
-        const newUser = new User({ username, password: hashPassword ,age,phone,email})
+        const newUser = new User({ username, password: hashPassword , passwordHint:hashPassword,age,phone,email})
 
         await newUser.save()
 

@@ -12,6 +12,7 @@ import Register from '../components/auth/RegisterForm';
 import { loginUser } from "../components/auth/userSlice";
 import { CreateProduct } from "../components/createProduct/createProduct";
 import Layout from "../components/layout/Layout";
+import Details from "../details-product/details";
 import { MainNavigator } from "./MainNavigator";
 
 export const AppNavigator = () => {
@@ -20,7 +21,6 @@ export const AppNavigator = () => {
 useEffect(() => {
   if (token) {
     authApi.getUserFromToken().then((res) =>{
-      console.log('xxxxxxx' , res);
       if(res.data.user){
         dispatch(loginUser(res.data.user))
       }
@@ -36,8 +36,9 @@ useEffect(() => {
           <Switch>
             <Route path="/" exact component={Login} />
             <Route path="/register" exact component={Register} />
-            <Route path="/layout" exact component={Layout} />
+            <Route path="/home" exact component={Layout} />
             <Route path="/create-product" exact component={CreateProduct} />
+            <Route path="/product-detail/:id"  component={Details} />
             <MainNavigator />
           </Switch>
         </Router>
