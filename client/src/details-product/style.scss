@@ -1,0 +1,26 @@
+.bar-details{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    img{
+        width: 50%;
+    }
+    div{
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 17px;;
+    }
+}
+.carousel-custom{
+    .control-arrow ,.carousel-status{
+        display: none;        
+    } 
+}
+.custtom-th{
+    th{
+        border-bottom: 0;
+    }
+}
+.custom-table{
+    width: 70% !important;
+}

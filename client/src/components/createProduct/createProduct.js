@@ -15,6 +15,7 @@ export const CreateProduct = () => {
   const [open, setOpen] = React.useState(true);
 
   const [imageSelected, setImageSelected] = useState("");
+  const [listImage, setListImage] = useState([]);
   const handleClose = () => {
     setOpen(false);
   };
@@ -22,6 +23,23 @@ export const CreateProduct = () => {
   const priceProduct = useRef();
   const statusProduct = useRef();
   const {enqueueSnackbar} = useSnackbar()
+  const onChangListImage = (files) =>{
+    const formData = new FormData();
+    for (let index = 0; index < files.length; index++) {
+      formData.append("file", files[index]);
+      formData.append("upload_preset", "m4jso0bw");
+    }
+    Axios.post("https://api.cloudinary.com/v1_1/dwn6likgj/image/upload", formData)
+      .then((res) => {
+        const newList = [...listImage];
+        newList.push(res.data.url);
+        setListImage(newList)
+        
+      })
+      .catch((error) => {});
+  }
+
+  console.log('listImage1' ,listImage);
   const onChangeImage = (files) => {
     const formData = new FormData();
     formData.append("file", files[0]);
@@ -38,9 +56,9 @@ export const CreateProduct = () => {
         imageProduct:imageSelected,
         statusProduct:statusProduct.current.value,
         priceProduct:priceProduct.current.value,
+        listImage:listImage,
       }
-      
-      console.log(nameProduct.current.value ,statusProduct.current.value ,priceProduct.current.value);
+      console.log(listImage);
       if(createItemProduct.nameProduct === '' || createItemProduct.statusProduct === '' ||createItemProduct.priceProduct === '' , createItemProduct.imageProduct===''){
         enqueueSnackbar('Nhập đủ thông tin' , {variant:'error'})
         return;
@@ -73,6 +91,7 @@ export const CreateProduct = () => {
             <Input
               onChange={(event) => {
                 onChangeImage(event.target.files);
+               
               }}
               className="item-input"
               name=""
@@ -80,7 +99,18 @@ export const CreateProduct = () => {
               type="file"
               required
             />
+            <input
+            onChange={(event) => {
+              onChangListImage(event.target.files);
+            }}
+            className="item-input"
+            name=""
+            label="Ảnh sản phẩm"
+            type="file"
+            required
+            multiple
 
+          />
             <TextField className="item-input" name="nameProduct" label="Tên sản phẩm" inputRef={nameProduct}/>
             <TextField className="item-input" name="priceProduct" label="Giá sản phẩm" inputRef={priceProduct} />
             <TextField className="item-input" name="statusProduct" label="Trạng thái" inputRef={statusProduct}/>
@@ -88,7 +118,7 @@ export const CreateProduct = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Huỷ</Button>
-          <Button onClick={createProduct}>
+          <Button onClick={() => createProduct()}>
             Tạo sản phẩm
           </Button>
         </DialogActions>

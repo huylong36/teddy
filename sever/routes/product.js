@@ -4,13 +4,14 @@ const Product = require("../models/Product");
 
 // tao
 router.post("/", async (req, res) => {
-  const { nameProduct, imageProduct, statusProduct, priceProduct } = req.body;
+  const { nameProduct, imageProduct, statusProduct, priceProduct ,listImage} = req.body;
   try {
     const newProduct = new Product({
       nameProduct,
       imageProduct,
       statusProduct,
       priceProduct: priceProduct || 0,
+      listImage:listImage,
     });
     await newProduct.save();
     res.json({ success: true, message: "create success", newProduct });

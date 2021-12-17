@@ -13,6 +13,9 @@ const ProductSchema = new Schema({
     },
     priceProduct:{
         type:String,
+    },
+    listImage : {
+        type:Array,
     }
 })
 module.exports = mongoose.model('product' , ProductSchema)
