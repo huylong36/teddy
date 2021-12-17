@@ -8,8 +8,10 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Axios from "axios";
 import { useSnackbar } from "notistack";
 import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { productApi } from "../../api/api/productApi";
 import Header from "../layout/header/header";
+import { createProductRd } from "./createProductSlice";
 import "./style.scss";
 export const CreateProduct = () => {
   const [open, setOpen] = React.useState(true);
@@ -23,6 +25,7 @@ export const CreateProduct = () => {
   const priceProduct = useRef();
   const statusProduct = useRef();
   const {enqueueSnackbar} = useSnackbar()
+  const dispatch = useDispatch()
   const onChangListImage = (files) =>{
     const formData = new FormData();
     for (let index = 0; index < files.length; index++) {
@@ -39,7 +42,6 @@ export const CreateProduct = () => {
       .catch((error) => {});
   }
 
-  console.log('listImage1' ,listImage);
   const onChangeImage = (files) => {
     const formData = new FormData();
     formData.append("file", files[0]);
@@ -67,7 +69,7 @@ export const CreateProduct = () => {
       }
       try {
         const dataProduct = await productApi.product(createItemProduct)
-        console.log(dataProduct);
+        dispatch(createProductRd(dataProduct.data.newProduct))
     } catch (error) {
         console.log(error);
     }

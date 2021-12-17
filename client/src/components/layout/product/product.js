@@ -17,7 +17,7 @@ const Product = () => {
             <Grid container spacing={{ xs: 2, md:5 }} item>
             {
                 product.map((item) => (
-                    <Grid className="item-product" key={item._id} md={3} sm={6} xs={12} spacing={{ xs: 2, md: 3 }} p={2} item>
+                    <Grid className="item-product" key={item._id} md={3} sm={6} xs={12} spacing={{ xs: 2, md: 2 }} p={0} item>
                     <Link to={"/product-detail/" +item._id}>
                         <Paper>
                             <Grid className="total__item__product" p={{md:2}} item>

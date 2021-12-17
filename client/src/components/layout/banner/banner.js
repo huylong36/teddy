@@ -3,11 +3,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Slide1 from '../../../assets/image/silde1.jpeg'
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper/core";
 import "./style.scss";
+import Container from '@mui/material/Container';
 // import "swiper/css/pagination"
+import Banner1 from '../../../assets/image/banner1.gif'
+import Banner2 from '../../../assets/image/banner2.png'
+import Banner3 from '../../../assets/image/banner3.png'
+import Banner4 from '../../../assets/image/banner4.png'
 SwiperCore.use([Autoplay, Pagination, Navigation])
 const Banner = () => {
     return (
-        <div>
+        <Container >
         <Swiper
         spaceBetween={20}
         centeredSlides={true}
@@ -21,14 +26,12 @@ const Banner = () => {
         loop={true}
         
     >
-        <SwiperSlide><img src="https://imgt.taimienphi.vn/cf/Images/np/2020/2/17/gau-bong-dep-va-dang-yeu-nhat-41.jpg"></img></SwiperSlide>
-        <SwiperSlide><img src="https://taoanhonline.com/wp-content/uploads/2019/08/hinh-nen-1920x1080-165-1.jpg"></img></SwiperSlide>
-        <SwiperSlide><img src="https://i.pinimg.com/originals/2d/5a/b1/2d5ab14f89532f6529fb2cf0f0cf4f3c.jpg"></img></SwiperSlide>
-        <SwiperSlide><img src="https://taoanhonline.com/wp-content/uploads/2019/08/hinh-nen-1920x1080-10-1.jpg"></img></SwiperSlide>
-        <SwiperSlide><img src="http://photo.techrum.vn/images/2018/07/21/xkT4E.jpg"></img></SwiperSlide>
-        <SwiperSlide><img src="https://img.thuthuat123.com/uploads/2019/10/17/hinh-nen-full-hd-toi-mau_105723431.jpg"></img></SwiperSlide>
+        <SwiperSlide><img src={Banner1}/></SwiperSlide>
+        <SwiperSlide><img src={Banner2}/></SwiperSlide>
+        <SwiperSlide><img src={Banner3}/></SwiperSlide>
+        <SwiperSlide><img src={Banner4}/></SwiperSlide>
     </Swiper>
-        </div>
+        </Container>
     )
 }
 

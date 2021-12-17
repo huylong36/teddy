@@ -49,7 +49,7 @@ const Header = () => {
                         <div className="item">Contact</div>
                         <div className="item">My Cart</div>
                         <div className="item" onClick={handleClick}>My Profile</div>
-                        <div className="item">{nameUser ? `Chào  ${nameUser}` : ''}</div>
+                        <div className="item">{token ? `Chào  ${nameUser}` : ''}</div>
                     </Grid>
                 </Grid>
                 <Menu
