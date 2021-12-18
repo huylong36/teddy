@@ -2,7 +2,7 @@ import axios from "axios";
 import queryString from "query-string";
 import Cookie from "js-cookie";
 
-const URL = 'http://localhost:5000'
+const URL = process.env.REACT_APP_ENDPOINT;
 
 const createAxios = () => {
   let axiosInstant = axios.create();

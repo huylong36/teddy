@@ -8,7 +8,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Axios from "axios";
 import { useSnackbar } from "notistack";
 import React, { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { productApi } from "../../api/api/productApi";
 import EditProduct from "../../editProduct/editProduct";
 import Header from "../layout/header/header";
@@ -25,6 +25,8 @@ export const CreateProduct = () => {
   const handleOpen = () =>{
     setOpen(true)
   }
+  const create = useSelector(state => state.create)
+  console.log('create' , create);
   const nameProduct = useRef();
   const priceProduct = useRef();
   const statusProduct = useRef();
