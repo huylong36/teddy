@@ -33,7 +33,7 @@ app.use('/api/auth' ,authRouter)
 app.use('/api/post' ,postRouter)
 app.use('/api/product',productRouter)
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT , () => console.log(`Sever started on PORT ${PORT}`));
  
