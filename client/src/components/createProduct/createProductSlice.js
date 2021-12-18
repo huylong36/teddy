@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
-    listProduct:[]
+    listProduct:{}
 }
 
 const createProductSlice = createSlice({
@@ -12,6 +12,7 @@ const createProductSlice = createSlice({
         }
     }
 })
+
 const { reducer, actions } = createProductSlice;
 
 export const { createProductRd } = actions;

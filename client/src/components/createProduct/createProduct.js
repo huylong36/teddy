@@ -10,17 +10,21 @@ import { useSnackbar } from "notistack";
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { productApi } from "../../api/api/productApi";
+import EditProduct from "../../editProduct/editProduct";
 import Header from "../layout/header/header";
 import { createProductRd } from "./createProductSlice";
 import "./style.scss";
 export const CreateProduct = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const [imageSelected, setImageSelected] = useState("");
   const [listImage, setListImage] = useState([]);
   const handleClose = () => {
     setOpen(false);
   };
+  const handleOpen = () =>{
+    setOpen(true)
+  }
   const nameProduct = useRef();
   const priceProduct = useRef();
   const statusProduct = useRef();
@@ -78,6 +82,7 @@ export const CreateProduct = () => {
   return (
     <div>
     <Header/>
+      <Button onClick={() => handleOpen()}>Tạo sản phẩm</Button>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -125,6 +130,7 @@ export const CreateProduct = () => {
           </Button>
         </DialogActions>
       </Dialog>
+      <EditProduct/>
     </div>
   );
 };
