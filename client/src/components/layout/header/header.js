@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 import { authApi } from '../../../api/api/authApi'
 import Logo from '../../../assets/image/logo.png'
 import { loginUser } from '../../auth/userSlice'
@@ -38,7 +39,7 @@ const Header = () => {
     window.location.href="/"
   }
     return (
-        <div>
+        <div className="header">
             <Container maxWidth="lg">
                 <Grid container className="menu">
                     <Grid item md={4}>
@@ -48,8 +49,9 @@ const Header = () => {
                         <div className="item" onClick={()=>history.push('/')}>Home</div>
                         <div className="item">Contact</div>
                         <div className="item">My Cart</div>
+                        <div className="item linkto"><Link to="/create-product">Tạo sản phẩm</Link> </div>
+                        <div className="item" style={{color:"red"}}>{token ? `Chào  ${nameUser}` : ''}</div>
                         <div className="item" onClick={handleClick}>My Profile</div>
-                        <div className="item">{token ? `Chào  ${nameUser}` : ''}</div>
                     </Grid>
                 </Grid>
                 <Menu

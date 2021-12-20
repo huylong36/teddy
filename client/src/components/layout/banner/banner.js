@@ -12,7 +12,6 @@ import Banner4 from '../../../assets/image/banner4.png'
 SwiperCore.use([Autoplay, Pagination, Navigation])
 const Banner = () => {
     return (
-        <Container >
         <Swiper
         spaceBetween={20}
         centeredSlides={true}
@@ -26,12 +25,11 @@ const Banner = () => {
         loop={true}
         
     >
-        <SwiperSlide><img src={Banner1}/></SwiperSlide>
-        <SwiperSlide><img src={Banner2}/></SwiperSlide>
-        <SwiperSlide><img src={Banner3}/></SwiperSlide>
-        <SwiperSlide><img src={Banner4}/></SwiperSlide>
+        <SwiperSlide><img src="https://image.vtc.vn/resize/th/upload/2020/12/14/chuc-mung-giang-sinh-1200x800-22113811.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src={Banner2} alt=""/></SwiperSlide>
+        <SwiperSlide><img src={Banner3} alt=""/></SwiperSlide>
+        <SwiperSlide><img src={Banner4} alt=""/></SwiperSlide>
     </Swiper>
-        </Container>
     )
 }
 
